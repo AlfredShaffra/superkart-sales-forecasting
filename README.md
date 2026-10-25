@@ -12,6 +12,8 @@ The repository contains separate Flask/Gunicorn and Streamlit services. Both use
 4. For the public assessment API, set the forwarded port 7860 to Public in the Codespaces Ports panel. Copy its HTTPS URL.
 5. Submit a single record and the supplied `frontend/Batch_Data_SuperKart.csv` in the UI. Download the predictions to preserve row-level estimates and warnings.
 
+The development image removes an unused Yarn APT source before installing the Docker feature. This avoids an upstream Yarn signing-key failure in the base image. Package signature verification remains enabled; SuperKart does not depend on Yarn.
+
 The forwarded address is specific to the running Codespace. It stops serving when the Codespace is stopped. Keep the Codespace running during assessment, subject to your account's compute quota.
 
 ## Run with Docker locally
