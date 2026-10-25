@@ -1,0 +1,41 @@
+{
+  "model_version": "superkart-v1.0.0",
+  "model_type": "Random Forest tuned",
+  "reference_year": 2025,
+  "test_metrics": {
+    "rmse": 290.1065890864473,
+    "mae": 108.7613977303552,
+    "r2": 0.9264545841810103,
+    "adjusted_r2_k10": 0.9261736620426643,
+    "mape_pct": 4.964727546933344,
+    "wape_pct": 3.126887338406038,
+    "bias_mean_pred_minus_actual": 2.073370338766254,
+    "p90_absolute_error": 211.48478377200777
+  },
+  "cv_metrics": {
+    "mean_r2": 0.930558973128354,
+    "std_r2": 0.010158844015017059,
+    "mean_rmse": 279.5860535871019,
+    "std_rmse": 22.479529775960472,
+    "mean_mae": 105.76285071619482,
+    "fold_r2": [
+      0.94359663983012,
+      0.9234792851184935,
+      0.9155308593255188,
+      0.9312907563578896,
+      0.9388973250097479
+    ],
+    "fold_rmse": [
+      245.8776631009865,
+      290.63312024303656,
+      312.4487205891564,
+      282.74263457491145,
+      266.2281294274187
+    ]
+  },
+  "train_rows": 6134,
+  "test_rows": 2629,
+  "currency": "unspecified currency units",
+  "prediction_period": "source observation period unspecified",
+  "joblib_sha256": "0b0818a250da08d8dd58b7ff940c76d3de80ddb4b4d3441223b1f829729da163"
+}

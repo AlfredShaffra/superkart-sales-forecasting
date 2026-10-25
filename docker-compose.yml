@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "7860:7860"
+    networks:
+      - superkart-network
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    environment:
+      BACKEND_URL: http://backend:7860
+    ports:
+      - "8501:8501"
+    networks:
+      - superkart-network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+networks:
+  superkart-network:
+    driver: bridge

@@ -1,0 +1,284 @@
+{
+  "model_name": "Random Forest tuned",
+  "target": "Product_Store_Sales_Total",
+  "input_features": [
+    "Product_Weight",
+    "Product_Sugar_Content",
+    "Product_Allocated_Area",
+    "Product_MRP",
+    "Store_Size",
+    "Store_Location_City_Type",
+    "Store_Type",
+    "Product_Id_char",
+    "Store_Age_Years",
+    "Product_Type_Category"
+  ],
+  "numeric_features": [
+    "Product_Weight",
+    "Product_Allocated_Area",
+    "Product_MRP",
+    "Store_Age_Years"
+  ],
+  "categorical_features": [
+    "Product_Sugar_Content",
+    "Store_Size",
+    "Store_Location_City_Type",
+    "Store_Type",
+    "Product_Id_char",
+    "Product_Type_Category"
+  ],
+  "category_domains": {
+    "Product_Sugar_Content": [
+      "Low Sugar",
+      "No Sugar",
+      "Regular"
+    ],
+    "Store_Size": [
+      "High",
+      "Medium",
+      "Small"
+    ],
+    "Store_Location_City_Type": [
+      "Tier 1",
+      "Tier 2",
+      "Tier 3"
+    ],
+    "Store_Type": [
+      "Departmental Store",
+      "Food Mart",
+      "Supermarket Type1",
+      "Supermarket Type2"
+    ],
+    "Product_Id_char": [
+      "DR",
+      "FD",
+      "NC"
+    ],
+    "Product_Type_Category": [
+      "Non Perishables",
+      "Perishables"
+    ]
+  },
+  "numeric_training_bounds": {
+    "Product_Weight": {
+      "min": 5.13,
+      "max": 22.0,
+      "p01": 7.6,
+      "p99": 17.6567
+    },
+    "Product_Allocated_Area": {
+      "min": 0.004,
+      "max": 0.298,
+      "p01": 0.007,
+      "p99": 0.205
+    },
+    "Product_MRP": {
+      "min": 31.0,
+      "max": 266.0,
+      "p01": 76.416,
+      "p99": 218.99720000000002
+    },
+    "Store_Age_Years": {
+      "min": 16.0,
+      "max": 38.0,
+      "p01": 16.0,
+      "p99": 38.0
+    }
+  },
+  "store_profiles": [
+    {
+      "Store_Size": "Medium",
+      "Store_Location_City_Type": "Tier 2",
+      "Store_Type": "Supermarket Type2",
+      "Store_Age_Years": 16
+    },
+    {
+      "Store_Size": "Small",
+      "Store_Location_City_Type": "Tier 3",
+      "Store_Type": "Food Mart",
+      "Store_Age_Years": 27
+    },
+    {
+      "Store_Size": "High",
+      "Store_Location_City_Type": "Tier 2",
+      "Store_Type": "Supermarket Type1",
+      "Store_Age_Years": 38
+    },
+    {
+      "Store_Size": "Medium",
+      "Store_Location_City_Type": "Tier 1",
+      "Store_Type": "Departmental Store",
+      "Store_Age_Years": 26
+    }
+  ],
+  "reference_year": 2025,
+  "sugar_normalization": {
+    "reg": "Regular"
+  },
+  "perishable_types": [
+    "Dairy",
+    "Meat",
+    "Fruits and Vegetables",
+    "Breakfast",
+    "Breads",
+    "Seafood"
+  ],
+  "revenue_unit": "currency units; currency not specified in source",
+  "prediction_horizon": "same undefined observation period as source records",
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "python_version": "3.12.14",
+  "joblib_sha256": "0b0818a250da08d8dd58b7ff940c76d3de80ddb4b4d3441223b1f829729da163",
+  "joblib_bytes": 9721323,
+  "trained_rows": 6134,
+  "test_rows": 2629,
+  "encoded_features": [
+    "categorical__Product_Sugar_Content_Low Sugar",
+    "categorical__Product_Sugar_Content_No Sugar",
+    "categorical__Product_Sugar_Content_Regular",
+    "categorical__Store_Size_High",
+    "categorical__Store_Size_Medium",
+    "categorical__Store_Size_Small",
+    "categorical__Store_Location_City_Type_Tier 1",
+    "categorical__Store_Location_City_Type_Tier 2",
+    "categorical__Store_Location_City_Type_Tier 3",
+    "categorical__Store_Type_Departmental Store",
+    "categorical__Store_Type_Food Mart",
+    "categorical__Store_Type_Supermarket Type1",
+    "categorical__Store_Type_Supermarket Type2",
+    "categorical__Product_Id_char_DR",
+    "categorical__Product_Id_char_FD",
+    "categorical__Product_Id_char_NC",
+    "categorical__Product_Type_Category_Non Perishables",
+    "categorical__Product_Type_Category_Perishables",
+    "numeric__Product_Weight",
+    "numeric__Product_Allocated_Area",
+    "numeric__Product_MRP",
+    "numeric__Store_Age_Years"
+  ],
+  "max_reload_prediction_delta": 0.0,
+  "sample_payload": {
+    "Product_Weight": 12.66,
+    "Product_Sugar_Content": "Low Sugar",
+    "Product_Allocated_Area": 0.027,
+    "Product_MRP": 117.08,
+    "Store_Size": "Medium",
+    "Store_Location_City_Type": "Tier 2",
+    "Store_Type": "Supermarket Type2",
+    "Product_Id_char": "FD",
+    "Store_Age_Years": 16,
+    "Product_Type_Category": "Non Perishables"
+  },
+  "sample_prediction": 2894.073057772367,
+  "known_limitations": [
+    "No dates or quarter labels, so temporal forecasting accuracy has not been measured.",
+    "Four stores only; store attributes are mutually confounded. Validation estimates performance on records in those existing stores.",
+    "Unseen store attributes and batch scenarios have no accuracy guarantee.",
+    "No target labels supplied for the batch file."
+  ],
+  "feature_columns": [
+    "Product_Weight",
+    "Product_Sugar_Content",
+    "Product_Allocated_Area",
+    "Product_MRP",
+    "Store_Size",
+    "Store_Location_City_Type",
+    "Store_Type",
+    "Product_Id_char",
+    "Store_Age_Years",
+    "Product_Type_Category"
+  ],
+  "allowed_categories": {
+    "Product_Sugar_Content": [
+      "Low Sugar",
+      "No Sugar",
+      "Regular"
+    ],
+    "Store_Size": [
+      "High",
+      "Medium",
+      "Small"
+    ],
+    "Store_Location_City_Type": [
+      "Tier 1",
+      "Tier 2",
+      "Tier 3"
+    ],
+    "Store_Type": [
+      "Departmental Store",
+      "Food Mart",
+      "Supermarket Type1",
+      "Supermarket Type2"
+    ],
+    "Product_Id_char": [
+      "DR",
+      "FD",
+      "NC"
+    ],
+    "Product_Type_Category": [
+      "Non Perishables",
+      "Perishables"
+    ]
+  },
+  "numeric_bounds": {
+    "Product_Weight": {
+      "min": 5.13,
+      "max": 22.0,
+      "p01": 7.6,
+      "p99": 17.6567
+    },
+    "Product_Allocated_Area": {
+      "min": 0.004,
+      "max": 0.298,
+      "p01": 0.007,
+      "p99": 0.205
+    },
+    "Product_MRP": {
+      "min": 31.0,
+      "max": 266.0,
+      "p01": 76.416,
+      "p99": 218.99720000000002
+    },
+    "Store_Age_Years": {
+      "min": 16.0,
+      "max": 38.0,
+      "p01": 16.0,
+      "p99": 38.0
+    }
+  },
+  "observed_store_profiles": [
+    {
+      "Store_Size": "Medium",
+      "Store_Location_City_Type": "Tier 2",
+      "Store_Type": "Supermarket Type2",
+      "Store_Age_Years": 16
+    },
+    {
+      "Store_Size": "Small",
+      "Store_Location_City_Type": "Tier 3",
+      "Store_Type": "Food Mart",
+      "Store_Age_Years": 27
+    },
+    {
+      "Store_Size": "High",
+      "Store_Location_City_Type": "Tier 2",
+      "Store_Type": "Supermarket Type1",
+      "Store_Age_Years": 38
+    },
+    {
+      "Store_Size": "Medium",
+      "Store_Location_City_Type": "Tier 1",
+      "Store_Type": "Departmental Store",
+      "Store_Age_Years": 26
+    }
+  ],
+  "model_version": "superkart-v1.0.0",
+  "model_type": "Random Forest tuned"
+}
